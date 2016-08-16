@@ -1,0 +1,11 @@
+// disable Jetpack dashboard widget
+  remove_meta_box('jetpack_summary_widget', 'dashboard', 'normal');
+
+// Remove Jetpack
+  function hzd_remove_jetpack() {
+	if( class_exists( 'Jetpack' ) ) {
+	  remove_menu_page( 'jetpack' );
+	}
+}
+
+add_action( 'admin_init', 'hzd_remove_jetpack' );
